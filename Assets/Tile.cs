@@ -52,7 +52,7 @@ public class Tile : MonoBehaviour
     private void GainMoney(Player player)
     {
         player.AddMoney(100);
-        moneychangetext.text = $"You got $100! Total amount of Money: {player.money}";
+        moneychangetext.text = $"You got $100 from your job! Total amount of Money: {player.money}";
         moneychangetext.ForceMeshUpdate();
         Debug.Log("Text updated: 100 dollar added!");
     }
@@ -60,14 +60,17 @@ public class Tile : MonoBehaviour
     private void LoseMoney(Player player)
     {
         player.DeductMoney(50);
-        moneychangetext.text = $"You lost $50! Total amount of Money: {player.money}";
+        moneychangetext.text = $"You lost $50 from Netflix subscriptions! Total amount of Money: {player.money}";
         moneychangetext.ForceMeshUpdate();
         Debug.Log("Text updated: 50 dollar subtracted!");
     }
 
     private void Teleport(Player player)
     {
+        player.DeductMoney(500);
+        moneychangetext.text = $"You lost $500 from taxes! Total amount of Money: {player.money}";
         player.TeleportToStart();
+        
     }
 
     //private void StopHere(Player player)

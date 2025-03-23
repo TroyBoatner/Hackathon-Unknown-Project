@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public GameObject[] tiles; // Array of all tiles
 
     public TextMeshProUGUI stopheretext;
+    public int currentPlayerIndex = 0;
 
     public Occupation job;
 

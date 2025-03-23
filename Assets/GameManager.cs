@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public int currentPlayer = 0; // 0 for player 1, 1 for player 2
     public Player[] players = new Player[4];
-     public CameraFollow cameraFollow;
+     
 
     private void Start()
     {
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     private void startTurn()
     {
         Debug.Log("Player's turn"+ players[currentPlayer].name);
-        cameraFollow.target = players[currentPlayerIndex].transform; 
+        
     }
     private int endTurn()
     {
