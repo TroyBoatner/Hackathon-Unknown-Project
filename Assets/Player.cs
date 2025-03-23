@@ -17,17 +17,18 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player started at tile 1.");
         tiles = GameObject.FindGameObjectsWithTag("Tiles");
+        Debug.Log($"Number of tiles: {tiles.Length}");
     }
 
     public void MovePlayer(int steps)
     {
        
-        int newtitleIndex = currentTileIndex + steps;
-        if (newtitleIndex >= tiles.Length)
+        int newtileIndex = currentTileIndex + steps;
+        if (newtileIndex >= tiles.Length)
         {
-            newtitleIndex = tiles.Length - 1;
+            newtileIndex = tiles.Length - 1;
         }
-        for (int i = currentTileIndex + 1; i <= newtitleIndex; i++)
+        for (int i = currentTileIndex + 1; i <= newtileIndex; i++)
         { 
             currentTileIndex = i;
             transform.position = tiles[i].transform.position + Vector3.up * 0.5f;
@@ -37,7 +38,7 @@ public class Player : MonoBehaviour
                 Debug.Log("Player stopped here.");
                 stopheretext.text = $"Stop here";
                 StopHere();
-                break;
+                
             }
         }
     
@@ -46,6 +47,7 @@ public class Player : MonoBehaviour
     private void StopHere()
     {
         Debug.Log("Player stopped here.");
+        return;
         
     }
     public void AddMoney(int amount)

@@ -34,9 +34,7 @@ public class Tile : MonoBehaviour
                 case "Teleport":
                     Teleport(player);
                     break;
-                case "Stopherecheckpoint":
-                    StopHere(player);
-                    break;
+                
                 case "Payday":
                     Payday(player);
                     break;
@@ -72,10 +70,11 @@ public class Tile : MonoBehaviour
         player.TeleportToStart();
     }
 
-    private void StopHere(Player player)
-    {
-        Debug.Log("Player stopped here.");
-    }
+    //private void StopHere(Player player)
+    //{
+      //  Debug.Log("Player stopped here.");
+        
+    //}
 
     private void Payday(Player player)
     {
